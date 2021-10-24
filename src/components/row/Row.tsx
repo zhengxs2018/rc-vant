@@ -51,6 +51,7 @@ const Row: React.FC<RowProps> = props => {
     const results: [number, number] = [0, 0]
     const normalizedGutter = Array.isArray(gutter)
       ? gutter
+      // todo 都需要计算
       : [gutter / 2, gutter / 2]
 
     normalizedGutter.forEach((g, index) => {
