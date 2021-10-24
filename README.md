@@ -32,7 +32,7 @@ $ yarn add @zhengxs/rc-vant
 
 使用过程中发现任何问题都可以提 Issue 给我们，当然，我们也非常欢迎你给我们发 PR。
 
-非功能与需求的讨论请求使用 [Discussions](https://github.com/zhengxs/rc-vant/discussions)
+非功能与需求的讨论请求使用 [Discussions](https://github.com/zhengxs2018/rc-vant/discussions)
 
 ## 开源协议
 
