@@ -1,4 +1,5 @@
 ---
+title: 首页
 hero:
   title: Vant React
   desc: 基于 Vant 和 React 的移动 UI 组件
