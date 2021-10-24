@@ -74,8 +74,16 @@ export default defineConfig({
             path: '/components/button',
           },
           {
+            title: 'Cell 单元格',
+            path: '/components/cell',
+          },
+          {
             title: 'Icon 图标',
             path: '/components/icon',
+          },
+          {
+            title: 'Image 图片',
+            path: '/components/image',
           },
           {
             title: 'Layout 布局',

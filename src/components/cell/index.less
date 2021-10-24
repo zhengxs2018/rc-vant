@@ -1,0 +1,125 @@
+@import './var.less';
+@import '../style/mixins/hairline.less';
+
+:root {
+  --rc-cell-font-size: @cell-font-size;
+  --rc-cell-line-height: @cell-line-height;
+  --rc-cell-vertical-padding: @cell-vertical-padding;
+  --rc-cell-horizontal-padding: @cell-horizontal-padding;
+  --rc-cell-text-color: @cell-text-color;
+  --rc-cell-background-color: @cell-background-color;
+  --rc-cell-border-color: @cell-border-color;
+  --rc-cell-active-color: @cell-active-color;
+  --rc-cell-required-color: @cell-required-color;
+  --rc-cell-label-color: @cell-label-color;
+  --rc-cell-label-font-size: @cell-label-font-size;
+  --rc-cell-label-line-height: @cell-label-line-height;
+  --rc-cell-label-margin-top: @cell-label-margin-top;
+  --rc-cell-value-color: @cell-value-color;
+  --rc-cell-icon-size: @cell-icon-size;
+  --rc-cell-right-icon-color: @cell-right-icon-color;
+  --rc-cell-large-vertical-padding: @cell-large-vertical-padding;
+  --rc-cell-large-title-font-size: @cell-large-title-font-size;
+  --rc-cell-large-label-font-size: @cell-large-label-font-size;
+}
+
+.@{class-prefix-cell} {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--rc-cell-vertical-padding) var(--rc-cell-horizontal-padding);
+  overflow: hidden;
+  color: var(--rc-cell-text-color);
+  font-size: var(--rc-cell-font-size);
+  line-height: var(--rc-cell-line-height);
+  background: var(--rc-cell-background-color);
+
+  &::after {
+    .hairline-bottom(var(--rc-cell-border-color), var(--rc-padding-md), var(--rc-padding-md));
+  }
+
+  &:last-child::after,
+  &--borderless::after {
+    display: none;
+  }
+
+  &__label {
+    margin-top: var(--rc-cell-label-margin-top);
+    color: var(--rc-cell-label-color);
+    font-size: var(--rc-cell-label-font-size);
+    line-height: var(--rc-cell-label-line-height);
+  }
+
+  &__title,
+  &__value {
+    flex: 1;
+  }
+
+  &__value {
+    position: relative;
+    overflow: hidden;
+    color: var(--rc-cell-value-color);
+    text-align: right;
+    vertical-align: middle;
+    word-wrap: break-word;
+
+    &--alone {
+      color: var(--rc-text-color);
+      text-align: left;
+    }
+  }
+
+  &__left-icon,
+  &__right-icon {
+    height: var(--rc-cell-line-height);
+    font-size: var(--rc-cell-icon-size);
+    line-height: var(--rc-cell-line-height);
+  }
+
+  &__left-icon {
+    margin-right: var(--rc-padding-base);
+  }
+
+  &__right-icon {
+    margin-left: var(--rc-padding-base);
+    color: var(--rc-cell-right-icon-color);
+  }
+
+  &--clickable {
+    cursor: pointer;
+
+    &:active {
+      background-color: var(--rc-cell-active-color);
+    }
+  }
+
+  &--required {
+    overflow: visible;
+
+    &::before {
+      position: absolute;
+      left: var(--rc-padding-xs);
+      color: var(--rc-cell-required-color);
+      font-size: var(--rc-cell-font-size);
+      content: '*';
+    }
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--large {
+    padding-top: var(--rc-cell-large-vertical-padding);
+    padding-bottom: var(--rc-cell-large-vertical-padding);
+
+    .@{class-prefix-cell}__title {
+      font-size: var(--rc-cell-large-title-font-size);
+    }
+
+    .@{class-prefix-cell}__label {
+      font-size: var(--rc-cell-large-label-font-size);
+    }
+  }
+}

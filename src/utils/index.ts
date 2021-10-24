@@ -12,6 +12,6 @@ export function renderSlot<R, P = any>(
     slot = fallback
   }
 
-  if (typeof slot === 'function') return slot()
+  if (typeof slot === 'function') return slot(props)
   return slot == null ? null : slot
 }
