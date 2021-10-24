@@ -1,11 +1,14 @@
 import { getConfig } from '@/components/config-provider'
 
-import { BEM, createBEM } from '@/utils/bem';
+import { BEM, createBEM } from '@/utils/bem'
 
 const cache: Record<string, BEM> = {}
 
-export default function useBEM(component: string, namespace?: string): [BEM, string] {
-  const name = `${namespace ?? getConfig('prefixCls')}-${component}`;
+export default function useBEM(
+  component: string,
+  namespace?: string,
+): [BEM, string] {
+  const name = `${namespace ?? getConfig('prefixCls')}-${component}`
 
   let bem: BEM
   if (cache[name]) {
@@ -15,5 +18,5 @@ export default function useBEM(component: string, namespace?: string): [BEM, str
     cache[name] = bem
   }
 
-  return [bem, name];
+  return [bem, name]
 }

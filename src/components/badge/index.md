@@ -22,16 +22,24 @@ export default () => {
         }}
       >
         <Badge content={5}>
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
         <Badge content={'10'}>
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
         <Badge content="Hot">
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
         <Badge dot>
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
       </div>
       <div
@@ -45,10 +53,14 @@ export default () => {
         }}
       >
         <Badge content={50} max={99}>
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
         <Badge content={200} max={99}>
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
       </div>
       <div
@@ -62,10 +74,14 @@ export default () => {
         }}
       >
         <Badge content={50} color="#1989fa">
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
         <Badge dot color="#1989fa">
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
       </div>
       <div
@@ -79,7 +95,9 @@ export default () => {
         }}
       >
         <Badge content={<button>测试</button>}>
-          <div style={{ width: '40px', height: '40px', background: '#efefef' }} />
+          <div
+            style={{ width: '40px', height: '40px', background: '#efefef' }}
+          />
         </Badge>
       </div>
       <div

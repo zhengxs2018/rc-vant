@@ -27,9 +27,9 @@ export default defineConfig({
       children: [
         {
           title: '更新日志',
-          path: 'https://github.com/zhengxs2018/rc-vant/blob/main/CHANGELOG.md'
-        }
-      ]
+          path: 'https://github.com/zhengxs2018/rc-vant/blob/main/CHANGELOG.md',
+        },
+      ],
     },
     // {
     //   title: '多语言',
@@ -53,16 +53,16 @@ export default defineConfig({
     '/guide': [
       {
         title: '快速开始',
-        path: '/guide/quick-start'
+        path: '/guide/quick-start',
       },
       {
         title: '进阶用法',
-        path: '/guide/advanced-usage'
+        path: '/guide/advanced-usage',
       },
       {
         title: '常见问题',
-        path: '/guide/faq'
-      }
+        path: '/guide/faq',
+      },
     ],
     '/components': [
       {
@@ -70,51 +70,51 @@ export default defineConfig({
         children: [
           {
             title: 'Button 按钮',
-            path: '/components/button'
+            path: '/components/button',
           },
           {
             title: 'Icon 图标',
-            path: '/components/icon'
+            path: '/components/icon',
           },
           {
             title: 'Layout 布局',
-            path: '/components/layout'
-          }
-        ]
+            path: '/components/layout',
+          },
+        ],
       },
       {
         title: '数据展示',
         children: [
           {
             title: 'Badge 徽标',
-            path: '/components/badge'
-          }
-        ]
+            path: '/components/badge',
+          },
+        ],
       },
       {
         title: '反馈',
         children: [
           {
             title: 'Loading 加载',
-            path: '/components/loading'
-          }
-        ]
+            path: '/components/loading',
+          },
+        ],
       },
       {
         title: '其他',
         children: [
           {
             title: 'ConfigProvider 配置',
-            path: '/components/config-provider'
-          }
-        ]
-      }
+            path: '/components/config-provider',
+          },
+        ],
+      },
     ],
     '/hooks': [
       {
         title: 'useBEM',
-        path: '/hooks/use-bem'
-      }
-    ]
+        path: '/hooks/use-bem',
+      },
+    ],
   },
 })

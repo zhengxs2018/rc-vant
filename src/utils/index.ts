@@ -2,7 +2,6 @@ export { addUnit, getSizeStyle } from './format/unit'
 
 export { isNumeric } from './validate/number'
 
-
 export function renderSlot<R, P = any>(
   props: P,
   name: keyof P,

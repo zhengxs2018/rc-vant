@@ -31,8 +31,6 @@ module.exports = {
       files: ['*.js'],
       env: {
         node: true,
-      },
-      rules: {
       }
     },
     {

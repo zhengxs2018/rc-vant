@@ -30,7 +30,7 @@ import type { Argument, Value } from 'classnames'
 export function explode(
   namespace: string,
   list: Argument[],
-  separator: string
+  separator: string,
 ): string {
   return implode(namespace, list, separator).join(' ')
 }
@@ -62,16 +62,20 @@ export function explode(
  * // -> ["button__icon", "button__demo", "button__doc"]
  * ```
  */
-export function implode(namespace: string, selector: string | number, separator: string): string
+export function implode(
+  namespace: string,
+  selector: string | number,
+  separator: string,
+): string
 export function implode(
   namespace: string,
   selector: Argument | Argument[],
-  separator: string
+  separator: string,
 ): string[]
 export function implode(
   namespace: string,
   selector: Value | Argument | Argument[],
-  separator: string
+  separator: string,
 ): string | string[] {
   if (selector == null || selector === false) return []
 
