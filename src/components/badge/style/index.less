@@ -1,0 +1,53 @@
+@import './var.less';
+
+:root {
+  --rc-badge-size: @badge-size;
+  --rc-badge-color: @badge-color;
+  --rc-badge-padding: @badge-padding;
+  --rc-badge-font-size: @badge-font-size;
+  --rc-badge-font-weight: @badge-font-weight;
+  --rc-badge-border-width: @badge-border-width;
+  --rc-badge-background-color: @badge-background-color;
+  --rc-badge-dot-color: @badge-dot-color;
+  --rc-badge-dot-size: @badge-dot-size;
+  --rc-badge-font-family: @badge-font-family;
+}
+
+.@{class-prefix-badge} {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: var(--rc-badge-size);
+  padding: var(--rc-badge-padding);
+  color: var(--rc-badge-color);
+  font-weight: var(--rc-badge-font-weight);
+  font-size: var(--rc-badge-font-size);
+  font-family: var(--rc-badge-font-family);
+  line-height: 1.2;
+  text-align: center;
+  background: var(--rc-badge-background-color);
+  border: var(--rc-badge-border-width) solid var(--rc-white);
+  border-radius: var(--rc-border-radius-max);
+
+  &--fixed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    transform-origin: 100%;
+  }
+
+  &--dot {
+    width: var(--rc-badge-dot-size);
+    min-width: 0;
+    height: var(--rc-badge-dot-size);
+    background: var(--rc-badge-dot-color);
+    border-radius: 100%;
+    border: none;
+    padding: 0;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

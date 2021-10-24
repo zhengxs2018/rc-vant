@@ -1,0 +1,86 @@
+{
+  "name": "@zhengxs/rc-vant",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "release": "npm run build && npm publish",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "fmt": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": [
+    "*.css",
+    "*.less",
+    "./es/index.js",
+    "./src/index.ts",
+    "./es/global/index.js",
+    "./src/global/index.ts"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.6 || ^17.0.0"
+  },
+  "dependencies": {
+    "@vant/icons": "^1.7.1",
+    "ahooks": "^2.10.11",
+    "classnames": "^2.3.1",
+    "dayjs": "^1.10.7",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.3.1",
+    "@types/lodash-es": "^4.17.5",
+    "@types/react": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.0.17",
+    "dumi-theme-mobile": "^1.1.14",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "father-build": "^1.17.2",
+    "gh-pages": "^3.0.0",
+    "lint-staged": "^10.0.7",
+    "postcss": "^8.3.11",
+    "postcss-px2rem": "^0.3.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.4.4",
+    "yorkie": "^2.0.0"
+  },
+  "author": {
+    "name": "zhengxs",
+    "email": "zhengxs2018@foxmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhengxs2018/rc-vant.git",
+    "branch": "main",
+    "platform": "github"
+  },
+  "license": "MIT"
+}
