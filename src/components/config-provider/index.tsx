@@ -9,8 +9,21 @@ export interface BaseConfig {
 }
 
 export interface Config extends BaseConfig {
+  /**
+   * CSS 类前缀
+   *
+   * @default "rc"
+   */
   prefixCls: string
+  /**
+   * 图标前缀
+   *
+   * @default "van-icon"
+   */
   iconPrefix: string
+  /**
+   * 本地语言配置
+   */
   locale: Locale
 }
 
@@ -38,11 +51,17 @@ export function useConfig(): Config {
   return useContext(ConfigContext)
 }
 
-export function getConfig<K extends keyof Config>(key: K): Config[K] {
-  return useConfig()[key]
+/**
+ * 根据名称获取配置项
+ *
+ * @param name 配置名称
+ * @returns 配置
+ */
+export function getConfig<K extends keyof Config>(name: K): Config[K] {
+  return useConfig()[name]
 }
 
-export const ConfigProvider: FC<ConfigProviderProps> = props => {
+const ConfigProvider: FC<ConfigProviderProps> = props => {
   const { children, ...userConfig } = props
   const parentConfig = useConfig()
 
@@ -57,3 +76,5 @@ export const ConfigProvider: FC<ConfigProviderProps> = props => {
     </ConfigContext.Provider>
   )
 }
+
+export default ConfigProvider
