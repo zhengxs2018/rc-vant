@@ -9,6 +9,7 @@ export default defineConfig({
   title: 'Vant React',
   outputPath: 'docs-dist',
   exportStatic: {},
+  mfsu: {},
   navs: [
     {
       title: '指南',
