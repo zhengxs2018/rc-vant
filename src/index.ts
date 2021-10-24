@@ -1,12 +1,28 @@
-
 import './components/style/css-variables.less'
 
-export { default as ConfigProvider } from './components/config-provider'
-export { default as Badge } from './components/badge'
-export { default as Button } from './components/button'
-export { default as Icon } from './components/icon'
-export { default as Loading } from './components/loading'
+import ConfigProvider from './components/config-provider'
 
-export { default as useBEM } from './hooks/use-bem'
+import Badge from './components/badge'
+import Button from './components/button'
+import Icon from './components/icon'
+import Loading from './components/loading'
+
+import Row from './components/row'
+import Col from './components/col'
+
+import useBEM from './hooks/use-bem'
+
+export {
+  // Components
+  ConfigProvider,
+  Button,
+  Icon,
+  Row,
+  Col,
+  Badge,
+  Loading,
+  // Hooks
+  useBEM,
+}
 
 export * from './utils'

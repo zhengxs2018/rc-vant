@@ -75,6 +75,10 @@ export default defineConfig({
           {
             title: 'Icon 图标',
             path: '/components/icon'
+          },
+          {
+            title: 'Layout 布局',
+            path: '/components/layout'
           }
         ]
       },
