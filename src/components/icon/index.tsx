@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import React, { FC, CSSProperties } from 'react'
+import React from 'react'
 
-import { getConfig } from '../config-provider'
+import { useConfigValue } from '../config-provider'
 import Badge from '../badge'
 
 import useBEM from '@/hooks/use-bem'
@@ -16,7 +16,7 @@ export interface IconProps {
   /** 自定义 css 类名 */
   className?: string
   /** 自定义 css 样式 */
-  style?: CSSProperties
+  style?: React.CSSProperties
   badge?: any
   dot?: boolean
   name?: string
@@ -26,14 +26,14 @@ export interface IconProps {
   tag?: keyof HTMLElementTagNameMap
 }
 
-const Icon: FC<IconProps> = props => {
+const Icon: React.FC<IconProps> = props => {
   const [bem] = useBEM('icon')
   const {
     name,
     size,
     color,
     children,
-    classPrefix = getConfig('iconPrefix'),
+    classPrefix = useConfigValue('iconPrefix'),
   } = props
 
   const isImageIcon = isImage(name)

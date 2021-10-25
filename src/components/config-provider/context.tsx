@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react'
+import React, { useContext } from 'react'
 
 import { Locale } from '../../locales/base'
 import zhCN from '../../locales/zh-CN'
@@ -27,7 +27,7 @@ export interface Config extends BaseConfig {
   locale: Locale
 }
 
-export const defaultConfigRef: Record<'current', Config> = {
+const defaultConfigRef: Record<'current', Config> = {
   current: {
     prefixCls: 'rc',
     iconPrefix: 'van-icon',
@@ -43,9 +43,7 @@ export function getDefaultConfig(): Config {
   return defaultConfigRef.current
 }
 
-const ConfigContext = React.createContext<Config>(getDefaultConfig())
-
-export type ConfigProviderProps = Partial<Config>
+export const ConfigContext = React.createContext<Config>(getDefaultConfig())
 
 export function useConfig(): Config {
   return useContext(ConfigContext)
@@ -57,24 +55,6 @@ export function useConfig(): Config {
  * @param name 配置名称
  * @returns 配置
  */
-export function getConfig<K extends keyof Config>(name: K): Config[K] {
+export function useConfigValue<K extends keyof Config>(name: K): Config[K] {
   return useConfig()[name]
 }
-
-const ConfigProvider: FC<ConfigProviderProps> = props => {
-  const { children, ...userConfig } = props
-  const parentConfig = useConfig()
-
-  return (
-    <ConfigContext.Provider
-      value={{
-        ...parentConfig,
-        ...userConfig,
-      }}
-    >
-      {children}
-    </ConfigContext.Provider>
-  )
-}
-
-export default ConfigProvider

@@ -1,4 +1,4 @@
-import { getConfig } from '@/components/config-provider'
+import { useConfigValue } from '@/components/config-provider'
 
 import { BEM, createBEM } from '@/utils/bem'
 
@@ -8,7 +8,7 @@ export default function useBEM(
   component: string,
   namespace?: string,
 ): [BEM, string] {
-  const name = `${namespace ?? getConfig('prefixCls')}-${component}`
+  const name = `${namespace ?? useConfigValue('prefixCls')}-${component}`
 
   let bem: BEM
   if (cache[name]) {
